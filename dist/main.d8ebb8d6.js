@@ -12030,23 +12030,14 @@ function _default() {
     loop: true,
     autoplay: {
       delay: 2000
-    },
-    on: {
-      init: function init() {
-        var slideWidth = document.querySelector('.container').offsetWidth;
-        document.querySelectorAll('.cloudy-slider .swiper-slide').forEach(function (el) {
-          el.style.width = "".concat(slideWidth, "px");
-        });
-      },
-      slideChange: function slideChange() {
-        var slideWidth = document.querySelector('.container').offsetWidth;
-        document.querySelectorAll('.cloudy-slider .swiper-slide').forEach(function (el) {
-          el.style.width = "".concat(slideWidth, "px");
-        });
-      }
     }
   });
 }
+
+var slideWidth = document.querySelector('.container').offsetWidth;
+document.querySelectorAll('.cloudy-slider__wrapper').forEach(function (el) {
+  el.style.width = "".concat(slideWidth, "px");
+});
 },{"swiper":"../node_modules/swiper/swiper.esm.js","swiper/swiper-bundle.css":"../node_modules/swiper/swiper-bundle.css"}],"scripts/main.js":[function(require,module,exports) {
 "use strict";
 

@@ -522,11 +522,13 @@ body {
   color: #ed6839;
 }
 
-.cloudy-slider .swiper-slide {
+.cloudy-slider__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 50px 0;
+}
+.cloudy-slider .swiper-slide {
   -webkit-transition: all ease 0.2s;
   -o-transition: all ease 0.2s;
   transition: all ease 0.2s;

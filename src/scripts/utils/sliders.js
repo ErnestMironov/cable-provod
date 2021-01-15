@@ -12,22 +12,11 @@ export default function () {
         autoplay: {
             delay: 2000
         },
-        on: {
-            init: () => {
-                const slideWidth = document.querySelector('.container').offsetWidth;
-
-                document.querySelectorAll('.cloudy-slider .swiper-slide').forEach(el => {
-                    el.style.width = `${slideWidth}px`
-                })
-            },
-            slideChange: () => {
-                const slideWidth = document.querySelector('.container').offsetWidth;
-
-                document.querySelectorAll('.cloudy-slider .swiper-slide').forEach(el => {
-                    el.style.width = `${slideWidth}px`
-                })
-            }
-        }
     });
-
 }
+
+const slideWidth = document.querySelector('.container').offsetWidth;
+
+document.querySelectorAll('.cloudy-slider__wrapper').forEach(el => {
+    el.style.width = `${slideWidth}px`
+})
