@@ -117,114 +117,74 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/utils/emSlider.js":[function(require,module,exports) {
-"use strict";
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = emSlider;
-
-function emSlider(elem) {
-  var autoplay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var slider = document.querySelector(elem);
-  var wrapper = slider.querySelector('.em-slider__wrapper');
-  var prevBtn = slider.querySelector('.em-slider__prev');
-  var nextBtn = slider.querySelector('.em-slider__next');
-  var slideContent = wrapper.querySelectorAll(".em-slider__slide");
-  var slideContentArr = [];
-  slideContent.forEach(function (el, idx) {
-    slideContentArr.push(el.innerHTML);
-  }); // slideContentArr.unshift(slideContentArr.pop());
-
-  wrapper.innerHTML = '<div class="em-slider__slide"></div><div class="em-slider__slide"></div><div class="em-slider__slide"></div>';
-  var slides = wrapper.children;
-  [].forEach.call(slides, function (el, idx) {
-    if (idx === 0) {
-      return el.innerHTML = slideContentArr[slideContentArr.length - 1];
-    }
-
-    el.innerHTML = slideContentArr[idx - 1];
-  });
-  var currentSlide = 0;
-
-  function next() {
-    var wrapp = wrapper.children;
-    var slide = document.createElement('div');
-    var idx;
-    idx = (currentSlide + 2) % slideContentArr.length;
-    currentSlide = (currentSlide + 1) % slideContentArr.length;
-    slide.classList.add("em-slider__slide");
-    slide.innerHTML = slideContentArr[idx];
-    wrapp[0].style.opacity = 0;
-    setTimeout(function () {
-      wrapp[0].remove();
-      wrapper.append(slide);
-    }, 100);
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
 
-  function prev() {
-    var wrapp = wrapper.children;
-    var slide = document.createElement('div');
-    var idx;
-    idx = currentSlide - 2;
-    --currentSlide;
-
-    if (idx < 0) {
-      idx = slideContentArr.length + idx;
-    }
-
-    if (currentSlide < 0) {
-      currentSlide = slideContentArr.length + currentSlide;
-    }
-
-    slide.classList.add("em-slider__slide");
-    slide.innerHTML = slideContentArr[idx];
-    wrapp[2].style.opacity = 0;
-    setTimeout(function () {
-      wrapp[2].remove();
-      wrapper.prepend(slide);
-    }, 100);
-  }
-
-  prevBtn.addEventListener("click", prev);
-  nextBtn.addEventListener("click", next);
-  var timer;
-
-  if (autoplay) {
-    timer = setInterval(next, autoplay);
-  }
-
-  slider.addEventListener("click", function () {
-    clearInterval(timer);
-  });
+  return bundleURL;
 }
-},{}],"scripts/utils/sayHello.js":[function(require,module,exports) {
-"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = sayHello;
-var message = "Hello JS!";
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
 
-function sayHello() {
-  console.log(message);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
 }
-},{}],"scripts/main.js":[function(require,module,exports) {
-"use strict";
 
-var _emSlider = _interopRequireDefault(require("./utils/emSlider"));
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
 
-var _sayHello = _interopRequireDefault(require("./utils/sayHello"));
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function updateLink(link) {
+  var newLink = link.cloneNode();
 
-/**
- * An example ES6 module:
- */
-(0, _emSlider.default)(".welcome__slider", 2000);
-},{"./utils/emSlider":"scripts/utils/emSlider.js","./utils/sayHello":"scripts/utils/sayHello.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -428,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/main.js"], null)
-//# sourceMappingURL=/main.d8ebb8d6.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
