@@ -1,4 +1,25 @@
 .menu {
 	width: 100%;
 	background-color: #161719;
+	color: #fff;
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		padding: 15px 0;
+	}
+
+	&__list-item {
+		margin-right: 73px;
+		font-size: 16px;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			transition: 0.18s;
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
 }

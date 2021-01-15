@@ -1,28 +1,27 @@
 {
-  "name": "parcel-starter",
-  "version": "1.0.0",
-  "description": "Front-end starter kit using the Parcel bundler",
-  "main": "index.js",
-  "dependencies": {
-    "prettier-plugin-csssort": "0.0.1"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "inputmask": "^5.0.5",
-    "parcel-bundler": "latest",
-    "parcel-plugin-clean-dist": "0.0.6",
-    "postcss": "^8.0.6",
-    "pug": "^3.0.0",
-    "sass": "^1.26.8",
-    "swiper": "^6.1.1"
-  },
-  "scripts": {
-    "clean": "rm dist",
-    "start": "parcel src/index.pug --open",
-    "build-prod-github": "parcel build src/index.pug --public-url www/rauberg_dev/dist --no-content-hash",
-    "build-prod": "parcel build src/index.pug  --no-content-hash"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "parcel-starter",
+	"version": "1.0.0",
+	"description": "Front-end starter kit using the Parcel bundler",
+	"main": "index.js",
+	"devDependencies": {
+		"autoprefixer": "^9.8.6",
+		"gh-pages": "^3.1.0",
+		"inputmask": "^5.0.5",
+		"prettier-plugin-csssort": "0.0.1",
+		"parcel-bundler": "latest",
+		"parcel-plugin-clean-dist": "0.0.6",
+		"postcss": "^8.0.6",
+		"pug": "^3.0.0",
+		"sass": "^1.26.8",
+		"swiper": "^6.1.1"
+	},
+	"scripts": {
+		"clean": "rm dist",
+		"start": "parcel src/index.pug --open",
+		"build-prod": "parcel build src/index.pug --public-url /cable-provod/  --no-content-hash",
+		"public-gh": "npm run build-prod && gh-pages -d dist"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }

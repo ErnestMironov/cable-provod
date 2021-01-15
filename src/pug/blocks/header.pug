@@ -1,2 +1,34 @@
 header.header
-    
+    img.header__bg(src="images/welcome-magma.png", alt="")
+    nav.menu
+        .container
+            ul.menu__list
+                li.menu__list-item
+                    a(href="/") Главная
+                li.menu__list-item
+                    a(href="javascript:;") О магазине
+                li.menu__list-item
+                    a(href="javascript:;") Доставка и оплата
+                li.menu__list-item
+                    a(href="javascript:;") Контакты
+    .container.header__wrap
+        a(href="/").header__item
+            img.header__logo(src="images/logo.png", alt="стинкабель")
+        .header__item.header__list
+            a(href="javascript:;").header__list-item 
+                img.header__icon(src="images/icons/geo.png", alt="")
+                span Посмотреть пункты самовывоза
+            a(href="javascript:;").header__list-item 
+                img.header__icon(src="images/icons/chat.png", alt="")
+                span Службы заботы о клиентах
+        .header__item.header__item_flex
+            img.header__icon(src="images/icons/phone.png", alt="")
+            .header__txt-wrap
+                a(href="tel:+7 (499) 406-09-72").header__tel +7 (499) 406-09-72
+                a(href="javascript:;").header__callback Заказать звонок  
+        .header__item.header__item_flex
+            img.header__icon(src="images/icons/cart.png", alt="")
+            .header__txt-wrap
+                | Корзина: 4 товара
+                br
+                | на 15 000 Р
