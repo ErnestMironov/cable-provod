@@ -1,22 +1,23 @@
 .menu {
 	width: 100%;
-	background-color: #161719;
-	color: #fff;
 
+	color: #fff;
+	background-color: #161719;
 	&__list {
 		display: flex;
 		justify-content: center;
+
 		padding: 15px 0;
 	}
-
 	&__list-item {
-		margin-right: 73px;
 		font-size: 16px;
 
+		margin-right: 73px;
 		a {
-			color: inherit;
-			text-decoration: none;
 			transition: 0.18s;
+			text-decoration: none;
+
+			color: inherit;
 			&:hover {
 				color: $orange;
 			}

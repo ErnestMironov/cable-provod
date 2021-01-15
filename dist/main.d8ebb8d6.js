@@ -117,29 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/utils/sayHello.js":[function(require,module,exports) {
+})({"scripts/utils/emSlider.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = sayHello;
-var message = "Hello JS!";
+exports.default = emSlider;
 
-function sayHello() {
-  console.log(message);
-}
-},{}],"scripts/main.js":[function(require,module,exports) {
-"use strict";
-
-var _sayHello = _interopRequireDefault(require("./utils/sayHello"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * An example ES6 module:
- */
 function emSlider(elem) {
+  var autoplay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   var slider = document.querySelector(elem);
   var wrapper = slider.querySelector('.em-slider__wrapper');
   var prevBtn = slider.querySelector('.em-slider__prev');
@@ -167,9 +154,6 @@ function emSlider(elem) {
     var idx;
     idx = (currentSlide + 2) % slideContentArr.length;
     currentSlide = (currentSlide + 1) % slideContentArr.length;
-    console.log(idx);
-    console.log(slideContentArr);
-    console.log(slideContentArr[idx]);
     slide.classList.add("em-slider__slide");
     slide.innerHTML = slideContentArr[idx];
     wrapp[0].style.opacity = 0;
@@ -194,9 +178,6 @@ function emSlider(elem) {
       currentSlide = slideContentArr.length + currentSlide;
     }
 
-    console.log(idx);
-    console.log(slideContentArr);
-    console.log(slideContentArr[idx]);
     slide.classList.add("em-slider__slide");
     slide.innerHTML = slideContentArr[idx];
     wrapp[2].style.opacity = 0;
@@ -208,11 +189,42 @@ function emSlider(elem) {
 
   prevBtn.addEventListener("click", prev);
   nextBtn.addEventListener("click", next);
-}
+  var timer;
 
-;
-emSlider(".em-slider");
-},{"./utils/sayHello":"scripts/utils/sayHello.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  if (autoplay) {
+    timer = setInterval(next, autoplay);
+  }
+
+  slider.addEventListener("click", function () {
+    clearInterval(timer);
+  });
+}
+},{}],"scripts/utils/sayHello.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = sayHello;
+var message = "Hello JS!";
+
+function sayHello() {
+  console.log(message);
+}
+},{}],"scripts/main.js":[function(require,module,exports) {
+"use strict";
+
+var _emSlider = _interopRequireDefault(require("./utils/emSlider"));
+
+var _sayHello = _interopRequireDefault(require("./utils/sayHello"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * An example ES6 module:
+ */
+(0, _emSlider.default)(".welcome__slider", 2000);
+},{"./utils/emSlider":"scripts/utils/emSlider.js","./utils/sayHello":"scripts/utils/sayHello.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -240,7 +252,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63221" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60175" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

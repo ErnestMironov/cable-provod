@@ -1,7 +1,7 @@
 .welcome.container 
     .welcome__head
         .welcome__catalog
-            btn.welcome__catalog-btn
+            button.welcome__catalog-btn
                 .welcome__catalog-btn-icon
                     span
                     span
@@ -10,3 +10,38 @@
         form.welcome__form
             input.welcome__search(type="search", name="search" placeholder="Что вы ищите ?")
             button.welcome__search-btn(type="submit" ) Показать результаты
+    .welcome__slider.em-slider
+        .em-slider__prev 
+            img(src="images/icons/angle_left.png", alt="")
+        .em-slider__next 
+            img(src="images/icons/angle_right.png", alt="")
+        .em-slider__wrapper
+            .em-slider__slide
+                img(src='images/banners/1.jpg' alt='')
+                h2.welcome__slider-caption Пример заголовка 
+                    br
+                    |для баннера
+                p.welcome__slider-paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    br
+                    |sed do eiusmod tempor incididunt ut labore
+                    br
+                    |et dolore magna aliqua. Ut enim ad 
+                    br
+                    |minim veniam, quis nostrud exercitation ullamco 
+                    br
+                    |laboris nisi ut aliquip ex ea commodo consequat. 
+            .em-slider__slide
+                img(src='images/banners/2.jpg' alt='')
+                h2.welcome__slider-caption Пример заголовка 
+                    br
+                    |для баннера
+                p.welcome__slider-paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    br
+                    |sed do eiusmod tempor incididunt ut labore
+                    br
+                    |et dolore magna aliqua. Ut enim ad 
+                    br
+                    |minim veniam, quis nostrud exercitation ullamco 
+                    br
+                    |laboris nisi ut aliquip ex ea commodo consequat. 
+            img(src="images/icons/angle_right.png", alt="")

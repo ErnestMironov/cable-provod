@@ -1,50 +1,33 @@
 .em-slider {
-	height: 500px;
 	width: 100%;
-
+	height: 500px;
 	&__wrapper {
 		position: relative;
-		height: 100%;
-		width: 100%;
-	}
 
+		width: 100%;
+		height: 100%;
+	}
 	&__slide {
 		position: absolute;
-		width: 100%;
-		height: 100%;
 		top: 0;
 		left: 0;
+
+		width: 100%;
+		height: 100%;
+
 		transition: all ease 0.5s;
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
-
-		span {
-			font-size: 32px;
-			position: absolute;
-			left: 100px;
-			top: 200px;
-			font-weight: bold;
-			text-shadow: 0 0 4px white;
-		}
-
 		&:first-child {
+			transform: translateX(-100px) scale(0.9);
 			transform-origin: left center;
-			transform: translateX(-100px) scale(0.8);
 		}
-
 		&:nth-child(2) {
 			z-index: 2;
+
 			transform: translateX(0) scale(1);
 		}
-
 		&:last-child {
+			transform: translateX(100px) scale(0.9);
 			transform-origin: right center;
-			transform: translateX(100px) scale(0.8);
 		}
 	}
 }
