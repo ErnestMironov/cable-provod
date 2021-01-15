@@ -1,8 +1,36 @@
 .categories {
-	display: flex;
-	justify-content: space-between;
+	position: relative;
 
 	padding-top: 415px;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__bubble {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+
+		width: 101px;
+		height: 202px;
+
+		transition: all ease 7s;
+
+		border-radius: 100% 0 0 100% / 50% 0 0 50%;
+		background-image: linear-gradient(331deg, #fff150 0%, #ef551f 100%);
+		&_big {
+			right: auto;
+
+			width: calc(333px / 2);
+			height: 333px;
+			margin-top: 580px;
+
+			transition: all ease-in-out 10s;
+
+			border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+		}
+	}
 	&__left {
 		max-width: 410px;
 		margin-right: 50px;

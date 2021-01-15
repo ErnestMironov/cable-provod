@@ -1,0 +1,15 @@
+.cloudy-slider {
+	.swiper-wrapper {
+	}
+	.swiper-slide {
+		display: flex;
+
+		padding: 50px 0;
+		transition: all ease 0.2s;
+
+		opacity: 0.5;
+		&-active {
+			opacity: 1;
+		}
+	}
+}
