@@ -3,44 +3,6 @@
 	&__head {
 		display: flex;
 	}
-	&__catalog {
-		margin-right: 10px;
-	}
-	&__catalog-btn {
-		font: 400 18px "Gilroy-Medium";
-
-		display: flex;
-		align-items: center;
-
-		padding: 14px 50px;
-
-		cursor: pointer;
-		transition: all ease 0.2s;
-
-		color: $orange;
-		border: 0;
-		border-radius: 24px;
-		background-color: #fff;
-		&:hover {
-			box-shadow: 0px 2px 8px #4040404d;
-		}
-	}
-	&__catalog-btn-icon {
-		display: flex;
-		flex-direction: column;
-
-		margin-right: 13px;
-		span {
-			width: 26px;
-			height: 4px;
-
-			border-radius: 4px;
-			background-color: currentColor;
-			&:not(:last-child) {
-				margin-bottom: 4px;
-			}
-		}
-	}
 	&__form {
 		display: flex;
 		flex: auto;

@@ -1,12 +1,17 @@
 .welcome.container 
     .welcome__head
-        .welcome__catalog
-            button.welcome__catalog-btn
-                .welcome__catalog-btn-icon
-                    span
-                    span
-                    span
-                span.welcome__catalog-btn-txt Каталог
+        .catalog
+            .catalog__wrapper
+                button.catalog__btn
+                    .catalog__btn-icon
+                        span
+                        span
+                        span
+                    span.catalog__btn-txt Каталог
+                ul.catalog__list
+                    each val in ['Кабели силовые', 'Провода', 'Кабели охранно-пожарные', 'Гофрированные трубы', 'Уценка']
+                        li.catalog__item
+                            a(href="javascript:;")=val
         form.welcome__form
             input.welcome__search(type="search", name="search" placeholder="Что вы ищите ?")
             button.welcome__search-btn(type="submit" ) Показать результаты

@@ -117,7 +117,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/utils/emParallax.js":[function(require,module,exports) {
+})({"scripts/utils/catalogToggle.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = catalogToggle;
+
+function catalogToggle() {
+  var catalog = document.querySelector(".catalog");
+  var btn = document.querySelector(".catalog__btn");
+  window.addEventListener("click", function (e) {
+    if (!catalog.contains(e.target)) {
+      catalog.classList.remove("open");
+    }
+  });
+  btn.addEventListener("click", function () {
+    catalog.classList.toggle("open");
+  });
+}
+},{}],"scripts/utils/emParallax.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12043,6 +12063,8 @@ function _default() {
 },{"swiper":"../node_modules/swiper/swiper.esm.js","swiper/swiper-bundle.css":"../node_modules/swiper/swiper-bundle.css"}],"scripts/main.js":[function(require,module,exports) {
 "use strict";
 
+var _catalogToggle = _interopRequireDefault(require("./utils/catalogToggle"));
+
 var _emParallax = _interopRequireDefault(require("./utils/emParallax"));
 
 var _emSlider = _interopRequireDefault(require("./utils/emSlider"));
@@ -12056,10 +12078,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * An example ES6 module:
  */
+(0, _catalogToggle.default)();
 (0, _emSlider.default)(".welcome__slider", 2000);
 (0, _emParallax.default)(".parallax-detail");
 (0, _sliders.default)();
-},{"./utils/emParallax":"scripts/utils/emParallax.js","./utils/emSlider":"scripts/utils/emSlider.js","./utils/sayHello":"scripts/utils/sayHello.js","./utils/sliders":"scripts/utils/sliders.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./utils/catalogToggle":"scripts/utils/catalogToggle.js","./utils/emParallax":"scripts/utils/emParallax.js","./utils/emSlider":"scripts/utils/emSlider.js","./utils/sayHello":"scripts/utils/sayHello.js","./utils/sliders":"scripts/utils/sliders.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12087,7 +12110,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51461" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52856" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
