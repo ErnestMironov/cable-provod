@@ -21,5 +21,25 @@ footer.footer
                 br
                 |публичной офертой
             a(href="javascript:;").footer__attention Политика конфиденциальности
+        .footer__column
+            h3.footer__title О компании
+            ul.footer__list
+                each val in ['Новости и статьи', 'Реквизиты', 'Наши клиенты', 'Служба заботы о клиентах', 'Программа лояльности', 'Документы']
+                    li.footer__list-item
+                        a(href="javascript:;")=val
+        .footer__column
+            h3.footer__title О магазине
+            ul.footer__list
+                each val in ['Доставка', 'Оплата', 'Контакты', 'О магазине']
+                    li.footer__list-item
+                        a(href="javascript:;")=val
+        .footer__column
+            h3.footer__title Рассылка
+            .footer__desc Подпишитеь на распродажи 
+                br
+                |и спецпредложения
+            form.footer__mailing(action="", method="get")
+                input.input(type="email", name="email" placeholder="Ваш E-mail")
+                button.btn(type="submit") Отправить
     .footer__bottom © Стинкабель, 2012-2020
 script(src="scripts/main.js")

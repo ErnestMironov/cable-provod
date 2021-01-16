@@ -1,4 +1,6 @@
 .btn {
+	font-family: "Gilroy-Medium";
+
 	display: inline-block;
 
 	padding: 19px 50px;
@@ -7,8 +9,12 @@
 	text-decoration: none;
 
 	color: #fff;
+	border: 0;
 	border-radius: 5px;
 	background-color: $orange;
+	&[type="submit"] {
+		border: 0;
+	}
 	&:hover {
 		background-color: darken($orange, 10%);
 	}
