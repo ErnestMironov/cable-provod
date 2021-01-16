@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="744.29" viewBox="0 0 1920 744.29">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ec7f1f;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="-74.469" y="2587.12" width="2141.189" height="744.29" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="-74.4688" y="2587.12" width="2141.189" height="744.29" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjE0MS4xODkiIGhlaWdodD0iNzQ0LjI5IiB2aWV3Qm94PSIwIDAgMjE0MS4xODkgNzQ0LjI5Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjEzOTQuMDk1IiB5MT0iNzQ0LjI5IiB4Mj0iNzQ3LjA5NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9Ii0wLjI1IiBzdG9wLWNvbG9yPSIjZjdiMjNkIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMS4yNSIgc3RvcC1jb2xvcj0iI2VkNjgzOSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjE0MS4xODkiIGhlaWdodD0iNzQ0LjI5Ii8+Cjwvc3ZnPgo="/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Прямоугольник_17" data-name="Прямоугольник 17" class="cls-1" d="M2012.82,2636.39c-157.26,22.29-326.68,31.71-500.52,33.91-173.99,1.84-352.39-3.55-531.233-19.26-178.988-14.79-358.746-44.25-536.133-58.12-88.684-6.67-176.818-8.04-263.731-1.67q-32.588,2.355-64.918,6.02-8.079.915-16.141,1.92-4.031.495-8.057,1.02c-2.684.34-5.366,0.7-8.047,1.06q-16.084,2.16-32.084,4.64c-42.666,6.63-84.861,14.91-126.43,25.26,16.117,47.81,24.317,129.86,29.812,209.12,5.362,80.41,8.018,158.03,9.962,223.54,3.834,130.96,4.589,216.93,7.117,267.58A2524.444,2524.444,0,0,1,483.833,3155c174.054-39.74,351.273-62.92,528.757-64.97a1945,1945,0,0,1,265.16,15.08q65.82,8.34,130.76,21.18,32.43,6.375,64.55,13.71,32.115,7.3,63.89,15.39c170.62,41.54,327.25,100,498.9,92.37,23.81-106.25,29.68-189.83,30.77-258,0.42-34.08-.62-64.32-2.41-91.56-1.81-27.24-4.37-51.47-7.29-73.43-12.14-87.35-27.81-140.65-44.1-188.38h0Z" transform="translate(0 -2587.12)"/>
+</svg>

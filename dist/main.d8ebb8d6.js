@@ -147,7 +147,7 @@ function emParallax(elem) {
   function move() {
     targets.forEach(function (el) {
       if (window.pageYOffset + window.innerHeight / 2 > el.top) {
-        el.elem.style.top = "".concat(window.pageYOffset + window.innerHeight / 2 - el.top, "px");
+        el.elem.style.top = "".concat(window.pageYOffset + window.innerHeight / 2 - el.top - 100, "px");
       }
     });
   }
@@ -12020,24 +12020,26 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-_swiper.default.use([_swiper.Autoplay]);
+_swiper.default.use([_swiper.Autoplay, _swiper.Navigation]);
 
 function _default() {
   var swiper = new _swiper.default(".cloudy-slider", {
-    slidesPerView: 'auto',
-    centeredSlides: true,
+    slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
-    autoplay: {
-      delay: 2000
-    }
-  });
-}
+    loopAdditionalSlides: 4,
+    navigation: {
+      prevEl: '.cloudy-slider__prev',
+      nextEl: '.cloudy-slider__next'
+    } // autoplay: {
+    //     delay: 2000
+    // }
 
-var slideWidth = document.querySelector('.container').offsetWidth;
-document.querySelectorAll('.cloudy-slider__wrapper').forEach(function (el) {
-  el.style.width = "".concat(slideWidth, "px");
-});
+  });
+} // const slideWidth = document.querySelector('.container').offsetWidth;
+// document.querySelectorAll('.cloudy-slider__wrapper').forEach(el => {
+//     el.style.width = `${slideWidth}px`
+// })
 },{"swiper":"../node_modules/swiper/swiper.esm.js","swiper/swiper-bundle.css":"../node_modules/swiper/swiper-bundle.css"}],"scripts/main.js":[function(require,module,exports) {
 "use strict";
 
@@ -12085,7 +12087,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64948" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61814" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

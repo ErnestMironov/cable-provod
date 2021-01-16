@@ -26,7 +26,7 @@ export default function emParallax(elem) {
         targets.forEach(el => {
 
             if (window.pageYOffset + window.innerHeight / 2 > el.top) {
-                el.elem.style.top = `${(window.pageYOffset + window.innerHeight / 2 - el.top)}px`;
+                el.elem.style.top = `${(window.pageYOffset + window.innerHeight / 2 - el.top - 100)}px`;
             }
         });
     }

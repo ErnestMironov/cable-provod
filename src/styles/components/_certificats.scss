@@ -1,0 +1,26 @@
+.certificats {
+	overflow: hidden;
+
+	margin-top: 200px;
+	.swiper-wrapper {
+		padding: 50px 0;
+	}
+	.swiper-slide {
+		display: flex;
+		justify-content: space-between;
+
+		transition: all ease 0.2s;
+
+		opacity: 0.5;
+		&-active {
+			opacity: 1;
+		}
+	}
+	&__item {
+		width: calc(100% / 4 - 26px);
+
+		border-radius: 5px;
+		background-color: rgb(255, 255, 255);
+		box-shadow: 0px 11px 24px 0px rgba(0, 0, 0, 0.16);
+	}
+}

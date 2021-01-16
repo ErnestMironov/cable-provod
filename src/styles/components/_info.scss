@@ -1,0 +1,88 @@
+.info {
+	position: relative;
+	z-index: -2;
+
+	overflow: hidden;
+
+	margin-top: 30px;
+	padding-top: 170px;
+	padding-bottom: 82px;
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+	&__bg {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		min-width: 100%;
+		min-height: 100%;
+	}
+	&__grid {
+		display: grid;
+
+		margin-top: 50px;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 26px;
+	}
+	&__preview {
+		border-radius: 5px;
+		background-color: rgb(255, 255, 255);
+		box-shadow: 0px 9px 49px 0px rgba(0, 0, 0, 0.06);
+	}
+	&__date {
+		font-size: 12px;
+
+		display: flex;
+		align-items: flex-end;
+
+		margin-top: 25px;
+		img {
+			max-height: 13px;
+			margin-right: 9px;
+		}
+	}
+	&__title {
+		font-family: "Gilroy-Bold";
+		font-size: 18px;
+		line-height: 1.333;
+
+		margin-top: 18px;
+	}
+	&__txt {
+		font-size: 15px;
+		line-height: 1.467;
+
+		margin-top: 18px;
+	}
+	&__decor {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		flex-direction: column;
+
+		padding-left: 50px;
+	}
+	&__bubble {
+		position: relative;
+		left: 167px;
+
+		width: 67px;
+		height: 67px;
+
+		border-radius: 50%;
+		background-image: linear-gradient(331deg, #fff150 0%, #ef551f 100%);
+		&_big {
+			bottom: -100px;
+			left: 90px;
+
+			width: 333px;
+			height: 333px;
+		}
+	}
+}
