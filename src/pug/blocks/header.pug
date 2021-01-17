@@ -1,19 +1,41 @@
+img.header__bg(src="images/welcome-magma.png", alt="")
 header.header
-    img.header__bg(src="images/welcome-magma.png", alt="")
     nav.menu
         .container
-            ul.menu__list
-                li.menu__list-item
-                    a(href="/") Главная
-                li.menu__list-item
-                    a(href="javascript:;") О магазине
-                li.menu__list-item
-                    a(href="javascript:;") Доставка и оплата
-                li.menu__list-item
-                    a(href="javascript:;") Контакты
+            .menu__burger
+                span
+                span
+                span
+                span
+            a(href="javascript:;").menu__mobile-cart
+                img(src="images/icons/cart.svg", alt="")
+            nav.menu__wrap
+                ul.menu__list
+                    li.menu__list-item.header__logo
+                        a(href="/") Главная
+                    li.menu__list-item
+                        a(href="javascript:;") О магазине
+                    li.menu__list-item
+                        a(href="javascript:;") Доставка и оплата
+                    li.menu__list-item
+                        a(href="javascript:;") Контакты
+                .menu__footer
+                        a(href="javascript:;").menu__footer-item
+                            img.menu__footer-icon(src="images/icons/geo.svg", alt="")
+                            span Посмотреть пункты самовывоза
+                        a(href="javascript:;").menu__footer-item
+                            img.menu__footer-icon(src="images/icons/chat.svg", alt="")
+                            span Службы заботы о клиентах
+                        .menu__footer-item
+                            img.menu__footer-icon(src="images/icons/phone.svg", alt="")
+                            .menu__footer-contacts
+                                a(href="tel:+7(499)406-09-72").menu__tel +7 (499) 406-09-72
+                                a(href="javascript:;").menu__callback Заказать звонок  
     .container.header__wrap
-        a(href="/").header__item
-            img.header__logo(src="images/logo.png", alt="стинкабель")
+        a(href="/").header__item.header__logo
+            img(src="images/logo.png", alt="стинкабель")
+        a.header__mobile-phone(href="tel:+7(499)406-09-72")
+            img(src="images/icons/phone_filled.svg", alt="")
         .header__item.header__list
             a(href="javascript:;").header__list-item 
                 img.header__icon(src="images/icons/geo.svg", alt="")

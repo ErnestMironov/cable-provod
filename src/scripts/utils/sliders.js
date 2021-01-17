@@ -5,13 +5,18 @@ import 'swiper/swiper-bundle.css';
 
 export default function () {
     const swiper = new Swiper(`.cloudy-slider`, {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 20,
         loop: true,
         loopAdditionalSlides: 4,
         navigation: {
             prevEl: '.cloudy-slider__prev',
             nextEl: '.cloudy-slider__next',
+        },
+        breakpoints: {
+            1000: {
+                slidesPerView: 4
+            }
         }
         // autoplay: {
         //     delay: 2000

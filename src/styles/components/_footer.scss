@@ -6,10 +6,26 @@
 		display: grid;
 		grid-template-columns: repeat(4, minmax(200px, auto));
 		grid-gap: 60px;
+
+		@include container {
+			grid-gap: 30px;
+		}
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include mobile {
+			display: block;
+		}
 	}
 	&__column {
 		&:first-child {
 			min-width: max-content;
+
+			@media screen and (max-width: $container-width) {
+				min-width: 0;
+			}
 		}
 	}
 	&__list {
@@ -25,11 +41,12 @@
 	}
 	&__list-item {
 		display: flex;
+		align-items: center;
 
 		margin-bottom: 20px;
 		a {
 			display: flex;
-			align-items: flex-end;
+			align-items: center;
 			flex: auto;
 
 			text-decoration: none;
@@ -47,7 +64,7 @@
 	&__bottom {
 		font-size: 16px;
 		line-height: 1.2;
-
+		margin-top: 30px;
 		padding: 20px;
 
 		text-align: center;
@@ -61,11 +78,12 @@
 
 		display: block;
 
-		margin-bottom: 22px;
-
 		text-decoration: none;
 
 		color: $orange;
+		&:not(:last-child) {
+			margin-bottom: 22px;
+		}
 	}
 	&__title {
 		font-size: 18px;

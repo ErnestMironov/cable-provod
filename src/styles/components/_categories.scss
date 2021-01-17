@@ -2,9 +2,17 @@
 	position: relative;
 
 	padding-top: 415px;
+
+	@include mobile {
+		padding-top: 50px;
+	}
 	.container {
 		display: flex;
 		justify-content: space-between;
+
+		@include tablet {
+			display: block;
+		}
 	}
 	&__bubble {
 		position: absolute;
@@ -19,6 +27,16 @@
 
 		border-radius: 100% 0 0 100% / 50% 0 0 50%;
 		background-image: linear-gradient(331deg, #fff150 0%, #ef551f 100%);
+
+		@include tablet {
+			width: 50px;
+			height: 100px;
+		}
+
+		@include mobile {
+			width: 25px;
+			height: 50px;
+		}
 		&_big {
 			right: auto;
 
@@ -29,17 +47,38 @@
 			transition: all ease-out 6s;
 
 			border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+
+			@include tablet {
+				width: 100px;
+				height: 200px;
+			}
+
+			@include mobile {
+				width: 40px;
+				height: 80px;
+			}
 		}
 	}
 	&__left {
 		max-width: 410px;
 		margin-right: 50px;
+
+		@include mobile {
+			max-width: 100%;
+			margin-right: 0;
+		}
 	}
 	&__desc {
 		font-size: 18px;
 		line-height: 1.667;
 
 		margin-top: 50px;
+
+		@include mobile {
+			font-size: 14px;
+
+			margin-top: 25px;
+		}
 	}
 	&__list {
 		display: grid;
@@ -47,6 +86,19 @@
 		margin-top: -80px;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 26px;
+
+		@include container {
+			grid-template-columns: repeat(2, minmax(auto, 50%));
+		}
+
+		@include tablet {
+			margin-top: 50px;
+		}
+
+		@include mobile {
+			margin-top: 30px;
+			grid-gap: 10px;
+		}
 	}
 	&__item {
 		width: 100%;
@@ -62,8 +114,17 @@
 		background-repeat: no-repeat;
 		background-position: right bottom;
 		background-size: cover;
+
+		@include mobile {
+			max-height: 60vw;
+			padding: 15px;
+		}
 		&:nth-child(2n) {
 			margin-top: -80px;
+
+			@include tablet {
+				margin-top: 0;
+			}
 		}
 		&:hover {
 			box-shadow: 0 4px 9px #00000029;
@@ -72,5 +133,9 @@
 	&__caption {
 		font-size: 30px;
 		line-height: 1.2;
+
+		@include mobile {
+			font-size: 16px;
+		}
 	}
 }

@@ -1,12 +1,15 @@
 .info {
 	position: relative;
-	z-index: -2;
 
 	overflow: hidden;
 
 	margin-top: 30px;
 	padding-top: 170px;
 	padding-bottom: 82px;
+
+	@include mobile {
+		padding-top: 0;
+	}
 	.container {
 		position: relative;
 		z-index: 1;
@@ -25,11 +28,35 @@
 		margin-top: 50px;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 26px;
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include mobile {
+			display: block;
+		}
+	}
+	&__item {
+		@include mobile {
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+		}
 	}
 	&__preview {
+		max-width: 100%;
+
 		border-radius: 5px;
 		background-color: rgb(255, 255, 255);
 		box-shadow: 0px 9px 49px 0px rgba(0, 0, 0, 0.06);
+
+		@include mobile {
+			width: 100%;
+			max-height: 200px;
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 	&__date {
 		font-size: 12px;

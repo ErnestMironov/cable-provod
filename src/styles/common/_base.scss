@@ -30,8 +30,7 @@ body {
 	margin: auto;
 
 	@include container {
-		padding-right: 25px;
-		padding-left: 25px;
+		padding: 0 60px;
 	}
 
 	@include tablet {
@@ -54,9 +53,16 @@ body {
 	display: flex;
 
 	text-transform: uppercase;
-	&::before {
-		align-items: flex-start;
 
+	@include container {
+		font-size: 40px;
+	}
+
+	@include tablet {
+		font-size: 24px;
+		font-size: clamp(18px, 6vw, 34px);
+	}
+	&::before {
 		min-width: 69px;
 		height: 5px;
 		margin-top: 30px;
@@ -65,5 +71,13 @@ body {
 		content: "";
 
 		background-color: $orange;
+
+		@include tablet {
+			min-width: 35px;
+			height: 3px;
+			margin-top: 25px;
+			margin-top: clamp(18px, 6vw, 34px);
+			margin-right: 20px;
+		}
 	}
 }
