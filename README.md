@@ -20,7 +20,7 @@ A basic front-end starter template using the [Parcel bundler](https://github.com
 ### Getting Started
 
 ```
-git clone https://github.com/pboi20/parcel-starter.git
+git clone https://github.com/ErnestMironov/cable-provod.git
 cd parcel-starter
 npm install
 ```
@@ -30,11 +30,11 @@ Alternatively, you could download the project as a [ZIP Archive](https://github.
 
 ### Available Scripts
 
-#### `npm run dev`
+#### `npm run start`
 
 Runs the project in development mode with hot reloading.
 
-#### `npm run build`
+#### `parcel build src/index.pug `
 
 Builds the project for production to the `dist` folder.
 
