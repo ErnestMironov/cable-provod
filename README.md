@@ -20,7 +20,7 @@ A basic front-end starter template using the [Parcel bundler](https://github.com
 ### Getting Started
 
 ```
-git clone https://github.com/pboi20/parcel-starter.git
+git clone https://github.com/ErnestMironov/cable-provod.git
 cd parcel-starter
 npm install
 ```
