@@ -30,11 +30,11 @@ Alternatively, you could download the project as a [ZIP Archive](https://github.
 
 ### Available Scripts
 
-#### `npm run dev`
+#### `npm run start`
 
 Runs the project in development mode with hot reloading.
 
-#### `npm run build`
+#### `parcel build src/index.pug `
 
 Builds the project for production to the `dist` folder.
 
