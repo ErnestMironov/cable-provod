@@ -1,4 +1,6 @@
-img.header__bg(src="images/welcome-magma.png", alt="")
+picture.header__bg
+    source(srcset="images/welcome-magma.webp", type="image/webp")
+    img(src="images/welcome-magma.png", alt="")
 header.header
     nav.menu
         .container
@@ -7,18 +9,29 @@ header.header
                 span
                 span
                 span
-            a(href="javascript:;").menu__mobile-cart
-                img(src="images/icons/cart.svg", alt="")
-            nav.menu__wrap
-                ul.menu__list
-                    li.menu__list-item.header__logo
-                        a(href="/") Главная
-                    li.menu__list-item
-                        a(href="javascript:;") О магазине
-                    li.menu__list-item
-                        a(href="javascript:;") Доставка и оплата
-                    li.menu__list-item
-                        a(href="javascript:;") Контакты
+            .menu__mobile-top-icons
+                a(href="javascript:;").menu__mobile-top-icon
+                    img(src="images/icons/geo.svg", alt="")
+                a(href="javascript:;").menu__mobile-top-icon 
+                    img(src="images/icons/chat.svg", alt="")
+                a(href="javascript:;").menu__mobile-top-icon
+                    img(src="images/icons/cart.svg", alt="")
+            .menu__wrap
+                nav.menu__nav
+                    .menu__catalog
+                        ul.menu__list
+                            each val in ['Кабели силовые', 'Провода', 'Кабели охранно-пожарные', 'Гофрированные трубы', 'Уценка']
+                                li.menu__list-item
+                                    a(href="javascript:;")=val
+                    ul.menu__list
+                        li.menu__list-item.header__logo
+                            a(href="/") Главная
+                        li.menu__list-item
+                            a(href="javascript:;") О магазине
+                        li.menu__list-item
+                            a(href="javascript:;") Доставка и оплата
+                        li.menu__list-item
+                            a(href="javascript:;") Контакты
                 .menu__footer
                         a(href="javascript:;").menu__footer-item
                             img.menu__footer-icon(src="images/icons/geo.svg", alt="")
@@ -26,16 +39,15 @@ header.header
                         a(href="javascript:;").menu__footer-item
                             img.menu__footer-icon(src="images/icons/chat.svg", alt="")
                             span Службы заботы о клиентах
-                        .menu__footer-item
+                        a(href="tel:+7(499)406-09-72").menu__footer-item.menu__footer-item_bold
                             img.menu__footer-icon(src="images/icons/phone.svg", alt="")
-                            .menu__footer-contacts
-                                a(href="tel:+7(499)406-09-72").menu__tel +7 (499) 406-09-72
-                                a(href="javascript:;").menu__callback Заказать звонок  
+                            span +7 (499) 406-09-72
+                        a(href="mailto:sale4@cable-provod.ru").menu__footer-item.menu__footer-item_bold
+                            img.menu__footer-icon(src="images/icons/mail.svg", alt="")
+                            span sale4@cable-provod.ru
     .container.header__wrap
         a(href="/").header__item.header__logo
             img(src="images/logo.png", alt="стинкабель")
-        a.header__mobile-phone(href="tel:+7(499)406-09-72")
-            img(src="images/icons/phone_filled.svg", alt="")
         .header__item.header__list
             a(href="javascript:;").header__list-item 
                 img.header__icon(src="images/icons/geo.svg", alt="")
@@ -43,14 +55,17 @@ header.header
             a(href="javascript:;").header__list-item 
                 img.header__icon(src="images/icons/chat.svg", alt="")
                 span Службы заботы о клиентах
-        .header__item.header__item_flex
-            img.header__icon(src="images/icons/phone.svg", alt="")
-            .header__txt-wrap
-                a(href="tel:+7(499)406-09-72").header__tel +7 (499) 406-09-72
-                a(href="javascript:;").header__callback Заказать звонок  
-        a(href="javascript:;").header__item.header__item_flex
+        .header__item.header__item_bold.header__list.header__contacts
+            a(href="tel:+7(499)406-09-72").header__list-item 
+                img.header__icon(src="images/icons/phone.svg", alt="")
+                span +7 (499) 406-09-72
+            a(href="mailto:sale4@cable-provod.ru").header__list-item 
+                img.header__icon(src="images/icons/mail.svg", alt="")
+                span sale4@cable-provod.ru
+        a(href="javascript:;").header__item.header__item_bold.header__cart
             img.header__icon(src="images/icons/cart.svg", alt="")
             .header__txt-wrap
-                | Корзина: 4 товара
-                br
-                | на 15 000 Р
+                span
+                    | Корзина: 4 товара
+                    br
+                    | на 15 000 Р

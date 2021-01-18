@@ -1,8 +1,11 @@
+import SwipeListener from 'swipe-listener';
+
 export default function emSlider(elem, autoplay = false) {
     let slider = document.querySelector(elem);
     let wrapper = slider.querySelector('.em-slider__wrapper');
     let prevBtn = slider.querySelector('.em-slider__prev');
     let nextBtn = slider.querySelector('.em-slider__next');
+    var listener = SwipeListener(slider);
 
     let slideContent = wrapper.querySelectorAll(`.em-slider__slide`);
     let slideContentArr = [];
@@ -10,6 +13,7 @@ export default function emSlider(elem, autoplay = false) {
 
         slideContentArr.push(el.innerHTML);
     });
+
 
     // slideContentArr.unshift(slideContentArr.pop());
     wrapper.innerHTML =
@@ -83,6 +87,21 @@ export default function emSlider(elem, autoplay = false) {
 
     slider.addEventListener("click", () => {
         clearInterval(timer)
+    })
+
+
+    slider.addEventListener('swipe', function (e) {
+        var directions = e.detail.directions;
+
+        if (directions.left) {
+            clearInterval(timer)
+            next()
+        }
+
+        if (directions.right) {
+            clearInterval(timer)
+            prev()
+        }
     })
 }
 

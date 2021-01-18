@@ -14,7 +14,7 @@
 		padding: 50px 0;
 
 		@include mobile {
-			padding: 25px 0;
+			padding: 35px 0;
 		}
 	}
 	& .swiper-slide {
@@ -30,10 +30,6 @@
 
 		@include tablet {
 			height: 100px;
-		}
-
-		@include mobile {
-			height: 70px;
 		}
 		img {
 			max-width: 80%;

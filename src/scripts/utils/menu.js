@@ -7,6 +7,7 @@ export default function menu() {
             menu.classList.remove("open");
             btn.classList.remove("active");
             document.body.style.overflow = "visible";
+            document.querySelector("html").style.overflow = "visible";
         }
     });
 
@@ -16,8 +17,10 @@ export default function menu() {
 
         if (menu.classList.contains("open")) {
             document.body.style.overflow = "hidden";
+            document.querySelector("html").style.overflow = "hidden";
         } else {
             document.body.style.overflow = "visible";
+            document.querySelector("html").style.overflow = "visible";
         }
     });
 }

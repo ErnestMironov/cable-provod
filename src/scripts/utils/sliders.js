@@ -1,6 +1,5 @@
 import Swiper, { Autoplay, Navigation } from 'swiper';
 Swiper.use([Autoplay, Navigation]);
-import 'swiper/swiper-bundle.css';
 
 
 export default function () {
@@ -14,6 +13,9 @@ export default function () {
             nextEl: '.cloudy-slider__next',
         },
         breakpoints: {
+            600: {
+                slidesPerView: 3
+            },
             1000: {
                 slidesPerView: 4
             }

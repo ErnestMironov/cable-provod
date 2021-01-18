@@ -45,9 +45,8 @@
 		}
 	}
 	&__preview {
-		max-width: 100%;
+		width: 100%;
 
-		border-radius: 5px;
 		background-color: rgb(255, 255, 255);
 		box-shadow: 0px 9px 49px 0px rgba(0, 0, 0, 0.06);
 
@@ -56,6 +55,12 @@
 			max-height: 200px;
 			object-fit: cover;
 			object-position: center;
+		}
+		img {
+			width: 100%;
+			max-width: 100%;
+
+			border-radius: 5px;
 		}
 	}
 	&__date {
@@ -76,6 +81,25 @@
 		line-height: 1.333;
 
 		margin-top: 18px;
+		a {
+			padding-bottom: 0.2em;
+
+			transition: all linear 0.1s;
+			text-decoration: none;
+
+			color: inherit;
+			&:hover {
+				color: $orange;
+				background-image: linear-gradient(
+					to right,
+					currentColor 75%,
+					transparent 55%
+				);
+				background-repeat: repeat-x;
+				background-position: 0 1.1em;
+				background-size: 5px 1px;
+			}
+		}
 	}
 	&__txt {
 		font-size: 15px;

@@ -17,28 +17,32 @@ footer.footer
                     a(href="https://goo.gl/maps/jK7fhJHQYXwe1Zkz6") 
                         img.footer__list-icon(src="images/icons/geo.svg", alt="alt")
                         span 121108, г. Москва, ул. Ивана Франко, д.4
-            span.footer__attention Информация на сайте не является 
-                br
-                |публичной офертой
-            a(href="javascript:;").footer__attention Политика конфиденциальности
+            .footer__attention 
+                span Информация на сайте не является 
+                    br
+                    |публичной офертой
+            a(href="javascript:;").footer__attention 
+                span Политика конфиденциальности
         .footer__column
             h3.footer__title О компании
             ul.footer__list
                 each val in ['Новости и статьи', 'Реквизиты', 'Наши клиенты', 'Служба заботы о клиентах', 'Программа лояльности', 'Документы']
                     li.footer__list-item
-                        a(href="javascript:;")=val
+                        a(href="javascript:;")
+                            span=val
         .footer__column
             h3.footer__title О магазине
             ul.footer__list
                 each val in ['Доставка', 'Оплата', 'Контакты', 'О магазине']
                     li.footer__list-item
-                        a(href="javascript:;")=val
+                        a(href="javascript:;")
+                            span=val
         .footer__column
             h3.footer__title Рассылка
             .footer__desc Подпишитеь на распродажи 
                 br
                 |и спецпредложения
-            form.footer__mailing(action="", method="get")
+            form.footer__mailing(action="javascript:;", method="get")
                 input.input(type="email", name="email" placeholder="Ваш E-mail")
                 button.btn(type="submit") Отправить
     .footer__bottom © Стинкабель, 2012-2020

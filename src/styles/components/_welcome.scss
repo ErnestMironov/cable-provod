@@ -2,8 +2,6 @@
 	margin-top: 126px;
 
 	@include mobile {
-		overflow: hidden;
-
 		margin: 0;
 		padding: 30px 20px;
 	}
@@ -115,6 +113,10 @@
 				background-color: rgb(215, 215, 215);
 				box-shadow: 0px 10px 38px 0px rgba(0, 0, 0, 0.34);
 
+				@include tablet {
+					padding: 20px 30px;
+				}
+
 				@include mobile {
 					padding: 15px;
 				}
@@ -161,6 +163,15 @@
 				border-radius: 50%;
 				background-image: linear-gradient(331deg, #fff150 0%, #ef551f 100%);
 				box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.19);
+
+				@include mobile {
+					line-height: 30px;
+
+					top: calc(50% - 15px);
+
+					width: 30px;
+					height: 30px;
+				}
 				img {
 					max-height: 13px;
 
@@ -169,15 +180,27 @@
 			}
 			&__prev {
 				left: -21px;
+
+				@include mobile {
+					left: -10px;
+				}
 			}
 			&__next {
 				right: -21px;
+
+				@include mobile {
+					right: -10px;
+				}
 			}
 		}
 	}
 	&__slider-caption {
 		font-size: 48px;
 		line-height: 1.2;
+
+		@include tablet {
+			font-size: 30px;
+		}
 
 		@include mobile {
 			font-size: 22px;
@@ -193,8 +216,15 @@
 
 		color: rgb(22, 23, 25);
 
-		@include mobile {
+		@include tablet {
 			font-size: 14px;
+
+			max-width: 50%;
+		}
+
+		@include mobile {
+			font-size: 12px;
+			line-height: normal;
 
 			margin-top: 15px;
 		}

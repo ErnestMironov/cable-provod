@@ -18,10 +18,10 @@
 	}
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, calc(50% - 25px / 2));
 		grid-gap: 25px;
 
-		@include tablet {
+		@include mobile {
 			display: block;
 		}
 	}
@@ -43,10 +43,16 @@
 	&__icon {
 		width: 180px;
 
+		@include tablet {
+			width: 90px;
+		}
+
 		@include mobile {
-			display: none;
+			width: 80px;
 		}
 		img {
+			max-width: 100%;
+
 			transform: translateX(-35px);
 		}
 	}
@@ -59,6 +65,10 @@
 		flex-direction: column;
 
 		text-transform: uppercase;
+
+		@include tablet {
+			font-size: 30px;
+		}
 
 		@include mobile {
 			font-size: 24px;

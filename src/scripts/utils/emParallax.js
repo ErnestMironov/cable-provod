@@ -23,9 +23,10 @@ export default function emParallax(elem) {
 
     // let top = getCoords(el).top
     function move() {
+        const footer = document.querySelector('.footer')
         targets.forEach(el => {
 
-            if (window.pageYOffset + window.innerHeight / 2 > el.top) {
+            if (window.pageYOffset + window.innerHeight / 2 > el.top && window.pageYOffset < document.body.clientHeight - window.innerHeight - 300) {
                 el.elem.style.top = `${(window.pageYOffset + window.innerHeight / 2 - el.top - 100)}px`;
             }
         });

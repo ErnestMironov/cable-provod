@@ -26,6 +26,8 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"prettier": "^1.19.1"
+		"baguettebox.js": "^1.11.1",
+		"prettier": "^1.19.1",
+		"swipe-listener": "^1.3.0"
 	}
 }

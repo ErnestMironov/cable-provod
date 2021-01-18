@@ -16,10 +16,19 @@
 		}
 
 		@include mobile {
-			display: block;
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			grid-gap: 0;
 		}
 	}
 	&__column {
+		@include mobile {
+			margin-bottom: 30px;
+			&:last-child {
+				align-self: center;
+			}
+		}
 		&:first-child {
 			min-width: max-content;
 
@@ -43,15 +52,36 @@
 		display: flex;
 		align-items: center;
 
-		margin-bottom: 20px;
+		margin-bottom: 17px;
 		a {
-			display: flex;
+			display: inline-flex;
 			align-items: center;
 			flex: auto;
 
 			text-decoration: none;
 
 			color: inherit;
+			&:hover {
+				span {
+					color: $orange;
+					background-image: linear-gradient(
+						to right,
+						currentColor 75%,
+						transparent 55%
+					);
+					background-repeat: repeat-x;
+					background-position: 0 1.1em;
+					background-size: 5px 1px;
+				}
+			}
+			span {
+				padding-bottom: 0.2em;
+
+				transition: all linear 0.1s;
+				text-decoration: none;
+
+				color: inherit;
+			}
 		}
 		span {
 			display: inline-block;
@@ -64,6 +94,7 @@
 	&__bottom {
 		font-size: 16px;
 		line-height: 1.2;
+
 		margin-top: 30px;
 		padding: 20px;
 
@@ -83,6 +114,29 @@
 		color: $orange;
 		&:not(:last-child) {
 			margin-bottom: 22px;
+		}
+		&[href] {
+			&:hover {
+				span {
+					color: $orange;
+					background-image: linear-gradient(
+						to right,
+						currentColor 75%,
+						transparent 55%
+					);
+					background-repeat: repeat-x;
+					background-position: 0 1.1em;
+					background-size: 5px 1px;
+				}
+			}
+			span {
+				padding-bottom: 0.2em;
+
+				transition: all linear 0.1s;
+				text-decoration: none;
+
+				color: inherit;
+			}
 		}
 	}
 	&__title {

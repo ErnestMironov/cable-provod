@@ -23,6 +23,10 @@
 			@include tablet {
 				transform: translateX(-10%) scale(0.9);
 			}
+
+			@include mobile {
+				transform: translateX(0) scale(0.9);
+			}
 		}
 		&:nth-child(2) {
 			z-index: 2;
@@ -35,6 +39,10 @@
 
 			@include tablet {
 				transform: translateX(10%) scale(0.9);
+			}
+
+			@include mobile {
+				transform: translateX(0) scale(0.9);
 			}
 		}
 	}

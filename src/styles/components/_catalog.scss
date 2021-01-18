@@ -5,10 +5,8 @@
 	width: 250px;
 	margin-right: 10px;
 
-	@include mobile {
-		width: 100%;
-		height: 49px;
-		margin-bottom: 15px;
+	@include tablet {
+		display: none;
 	}
 	&.open {
 		.catalog {
@@ -70,12 +68,21 @@
 			margin-bottom: 10px;
 		}
 		a {
-			transition: all linear 0.18s;
+			transition: all linear 0.1s;
 			text-decoration: none;
 
 			color: inherit;
+			border-bottom: 1px transparent dashed;
 			&:hover {
 				color: $orange;
+				background-image: linear-gradient(
+					to right,
+					currentColor 75%,
+					transparent 55%
+				);
+				background-repeat: repeat-x;
+				background-position: 0 1.2em;
+				background-size: 5px 1px;
 			}
 		}
 	}
