@@ -12,6 +12,10 @@ module.exports = function script() {
     // .pipe(eslint.format())
     .pipe(webpack({
       mode: process.env.NODE_ENV,
+      optimization: {
+        // We no not want to minimize our code.
+        minimize: false
+      },
       output: {
         filename: '[name].min.js',
       },
